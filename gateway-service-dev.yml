@@ -1,0 +1,10 @@
+spring:
+  profiles: dev
+
+server:
+  port: 8081
+
+logging:
+  level:
+    root: DEBUG
+    org.springframework.cloud.gateway: TRACE

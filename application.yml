@@ -1,0 +1,13 @@
+# Configurações Globais
+spring:
+  application:
+    name: global-config
+  main:
+    allow-bean-definition-overriding: true
+
+# Configurações comuns a todos os serviços
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics

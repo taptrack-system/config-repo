@@ -6,33 +6,24 @@ Repositório de **configurações centralizadas** utilizado pelo [Config Service
 
 ## Estrutura
 
-- **application.yml** → configurações globais
-- **application-dev.yml** → configurações globais para ambiente dev
-- **gateway-service.yml** → configs do Gateway
-- **discovery-service.yml** → configs do Eureka Discovery
+- **application.yml**: configurações globais
+- **application-dev.yml**: configurações globais para ambiente dev
+- **gateway-service.yml**: configs do Gateway
+- **discovery-service.yml**: configs do Eureka Discovery
 
 ---
 
 ## Como acessar as configurações
 
 - Configuração global:
-- http://localhost:8888/application/default
-- http://localhost:8888/application/dev
+    - [Application Default](http://localhost:8888/application/default)
+    - [Application Dev](http://localhost:8888/application/dev)
 
 - Gateway Service:
-- http://localhost:8888/gateway-service/default
-- http://localhost:8888/gateway-service/dev
+    - [Gateway Service Default](http://localhost:8888/gateway-service/default)
+    - [Gateway Service Dev](http://localhost:8888/gateway-service/dev)
 
 - Discovery Service:
-- http://localhost:8888/discovery-service/default
-- http://localhost:8888/discovery-service/dev
-
----
-
-Esse `config-repo` já cobre:
-- configs globais
-- configs específicas de cada serviço
-- suporte a perfis (`default` e `dev`)
-- exemplo de rotas no gateway
-
+    - [Discovery Service Default](http://localhost:8888/discovery-service/default)
+    - [Discovery Service Dev](http://localhost:8888/discovery-service/dev)
 

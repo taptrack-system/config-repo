@@ -1,0 +1,10 @@
+spring:
+  profiles: dev
+
+server:
+  port: 8762
+
+logging:
+  level:
+    com.netflix.eureka: DEBUG
+    org.springframework.cloud.netflix.eureka: DEBUG
