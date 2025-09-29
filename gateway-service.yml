@@ -16,7 +16,15 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: discovery
-          uri: http://localhost:8761
+        - id: discovery # Rota existente para o Discovery Service
+          uri: http://localhost:8761 # No ambiente Docker, isso pode ser ajustado para 'http://discovery-service:8761' se estivessem na mesma rede Docker-Compose
           predicates:
             - Path=/discovery/**
+        # USER SERVCIE
+        - id: user-service # ID único para a rota
+          uri: lb://USER-SERVICE # 'lb://' indica balanceamento de carga via Eureka. 'USER-SERVICE' deve ser o nome do serviço registrado no Eureka.
+          predicates:
+            - Path=/api/v1/users/**
+            - Path=/api/v1/roles/**
+          filters:
+            - StripPrefix=0 # Remove o prefixo da URL antes de encaminhar para o serviço
